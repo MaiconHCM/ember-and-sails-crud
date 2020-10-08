@@ -1,0 +1,47 @@
+<main>
+    <div class="calendar-container">
+        <div class="calendar-container__header">
+            <button {{action "home"}} class="calendar-container__btn calendar-container__btn--left" title="Previous">
+                <i class="icofont-arrow-left"></i>
+            </button>
+            <h2 class="calendar-container__title">Cadastro</h2>
+            <button class="calendar-container__btn calendar-container__btn--right" title="Next">
+            </button>
+        </div>
+        <div class="calendar-container__body">
+            <div class="calendar-table">
+                <div class="calendar-table__header">
+                    <div class="calendar-table__row">
+                        <div class="calendar-table__col">Bem-vindo ao cadastro de usuário super útil para sociedade!
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar-table__body">
+                    <div class="calendar-table__row">
+                        <div class='calendar-table__col'>
+                            <div class="calendar-table__item">
+                                <label for="name">Nome:</label>
+                                {{input type="text" value=user.name id="name" }}
+                            </div>
+                            <div class="calendar-table__item">
+                                <label for="senha">Senha:</label>
+                                {{input type="password" value=user.password id="password" }}
+                            </div>
+                            <div class="calendar-table__item">
+                                <label for="mail">E-mail:</label>
+                                {{input type="email" value=user.email id="email" }}
+                            </div>
+                            <div class="calendar-table__item">
+                                <label for="msg">Mensagem:</label>
+                                {{input type="text" value=user.message id="message" }}
+                            </div>
+                            <div class="calendar-table__item" class="button">
+                                <button {{action "cadastrar" user}} type="submit">Cadastrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

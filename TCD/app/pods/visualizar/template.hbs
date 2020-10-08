@@ -1,0 +1,40 @@
+<main>
+  <div class="calendar-container">
+    <div class="calendar-container__header">
+      <button {{ action 'login' }} class="calendar-container__btn calendar-container__btn--left" title="Previous">
+        <i class="icofont-arrow-left"></i>
+      </button>
+      <h2 class="calendar-container__title">Lista de usuários</h2>
+      <button class="calendar-container__btn calendar-container__btn--right" title="Next">
+      </button>
+    </div>
+    <div class="calendar-container__body">
+      <div class="calendar-table">
+        <div class="calendar-table__header">
+          <div class="calendar-table__row">
+            <div class="calendar-table__col">Lista de usuarios S2
+            </div>
+            <div class="calendar-table__col">
+              <a {{ action 'cadastrar' }}><i style="font-style: normal;" class="icofont-plus-circle"></i> Criar novo usuário</a>
+            </div>
+          </div>
+        </div>
+        <div class="calendar-table__body">
+          <div class="calendar-table__row">
+            <div class='calendar-table__col'>
+              {{#each model.list as |usuario| }}
+              <div class="calendar-table__item">
+                <p>{{ usuario.name }}
+                  <a {{ action 'editar' usuario.id }}><i style="font-style: normal;" class="icofont-ui-edit"></i></a>
+                  <a {{ action 'apagar' usuario.id }}><i><i style="font-style: normal;"
+                        class="icofont-ui-delete"></i></i></a>
+                </p>
+              </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
